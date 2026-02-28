@@ -25,7 +25,7 @@ export async function createThread(req: Request, res: Response) {
 
     const { content } = req.body;
     const files = req.files as Express.Multer.File[];
-    const imageFilenames = files ? files.map((file) => file.filename) : [];
+    const imageFilenames = files ? files.map((file) => file.path) : [];
 
     const valid = threadSchema.validate({ content });
     if (valid.error) {

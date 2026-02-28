@@ -6,7 +6,7 @@ import { getIO } from "../utils/socketEmitter";
 export async function createReply(req: Request, res: Response) {
   try {
     const { content, threadId } = req.body;
-    const image = req.file?.filename;
+    const image = req.file?.path;
     const userId = req.user?.id;
 
     if (!userId) {

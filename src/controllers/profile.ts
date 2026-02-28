@@ -149,7 +149,7 @@ export async function getAllProfiles(req: Request, res: Response) {
 export async function updateProfile(req: Request, res: Response) {
   try {
     const { fullname, username, bio } = req.body;
-    const avatar = req.file?.filename;
+    const avatar = req.file?.path;
     const userId = req.user?.id;
 
     if (!userId) {
