@@ -13,7 +13,7 @@
     "test:functional": "jest --testPathPatterns=src/__tests__/functional --runInBand",
     "test:integration": "jest --testPathPatterns=src/__tests__/integration --runInBand --detectOpenHandles",
     "dev": "ts-node-dev --respawn src/index.ts",
-    "build": "npx prisma generate && npx tsc",
+    "build": "npx prisma generate && npx tsc && cp -R src/generated dist/generated",
     "start": "npx prisma migrate deploy && node dist/index.js"
   },
   "dependencies": {
